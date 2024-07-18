@@ -4,7 +4,7 @@
 
 <table>
   <tr>
-    <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/GRoffo_Introduction_to_LLMs_2024.pdf" target="_blank">Paper PDF</a></td>
+    <td><a href="https://arxiv.org/abs/2407.12036" target="_blank">Paper PDF</a></td>
     <td><a href="https://www.researchgate.net/profile/Giorgio-Roffo" target="_blank">Author Page</a></td>
     <td><a href="https://scholar.google.it/citations?user=cD2LFuUAAAAJ&hl=en" target="_blank">Google Scholar</a></td>
     <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/slides_ViT_self_attention_vision_transformer.pdf" target="_blank">Slides Vision Transformer</a></td>
@@ -41,11 +41,9 @@ If you use this toolbox in your research or work, please consider citing the fol
     title={Exploring Advanced Large Language Models with LLMsuite},
     author={Giorgio Roffo},
     year={2024},
-    eprint={5632300},
+    eprint={2407.12036},
     archivePrefix={arXiv},
-    primaryClass={cs.CL},
-    note={A Free Comprehensive Recap of Techniques, Architectures, and Practical Applications},
-    url={https://github.com/giorgioroffo/large_language_models_open_suite}
+    primaryClass={cs.CL}
 }
 ```
 
