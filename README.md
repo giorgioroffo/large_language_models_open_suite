@@ -1,10 +1,14 @@
-# LLMSuite: A Python Toolbox for Practicing with Large Language Models
+<div align="center">
+  
+[![image](https://github.com/user-attachments/assets/29261802-bb2e-44e4-af8c-c09e843d723b)](https://arxiv.org/html/2407.12036v1)
+
+</div>
 
 <div align="center">
 
 <table>
   <tr>
-    <td><a href="https://arxiv.org/abs/2407.12036" target="_blank">Paper PDF</a></td>
+    <td><a href="https://arxiv.org/html/2407.12036v1" target="_blank">Paper PDF</a></td>
     <td><a href="https://www.researchgate.net/profile/Giorgio-Roffo" target="_blank">Author Page</a></td>
     <td><a href="https://scholar.google.it/citations?user=cD2LFuUAAAAJ&hl=en" target="_blank">Google Scholar</a></td>
     <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/slides_ViT_self_attention_vision_transformer.pdf" target="_blank">Slides Vision Transformer</a></td>
@@ -152,7 +156,18 @@ large_language_models_open_suite/
 
 ```
 
+## Datasets
 
+Another valuable resource is "The PILE," which consists of 20 datasets. These datasets are suitable for small-scale training or fine-tuning models.
+
+<div align="center">
+  
+[![image](https://github.com/user-attachments/assets/51cdcc57-b6ff-4c7e-9f3b-8430d8b3647f))](https://arxiv.org/html/2407.12036v1)
+
+</div>
+
+
+Multimodal Large Language Models: A new benchmark is [MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models](https://arxiv.org/abs/2306.13394) at the GitHub [MME GitHub link](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation).
 
 ## Queries
 
