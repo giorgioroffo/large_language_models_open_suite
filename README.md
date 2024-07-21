@@ -167,7 +167,7 @@ Another valuable resource is "The PILE," which consists of 20 datasets. These da
 </div>
 
 
-Multimodal Large Language Models: A new benchmark is [MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models](https://arxiv.org/abs/2306.13394) at the GitHub [MME GitHub link](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation).
+Multimodal Large Language Models [My Slides here](https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/multimodal_large_language_models.pdf): A new benchmark is [MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models](https://arxiv.org/abs/2306.13394) at the GitHub [MME GitHub link](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation).
 
 ## Queries
 
