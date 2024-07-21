@@ -1,16 +1,18 @@
 # Example Tutorial
 # Multi-Modal Retrieval using GPT text embedding and CLIP image embedding for Wikipedia Articles
 import os
-from pathlib import Path
-import wikipedia
+import os
+import os
 import urllib.request
-from PIL import Image
+import urllib.request
+from pathlib import Path
+from pathlib import Path
+
 import matplotlib.pyplot as plt
-import os
-import os
-from pathlib import Path
 import wikipedia
-import urllib.request
+import wikipedia
+from PIL import Image
+
 
 def plot_images(image_metadata_dict):
     original_images_urls = []
@@ -35,8 +37,23 @@ def plot_images(image_metadata_dict):
     plt.show()
 
 
-def download_wiki_images(data_path):
+def plot_ret_images(image_paths):
+    images_shown = 0
+    plt.figure(figsize=(16, 9))
+    for img_path in image_paths:
+        if os.path.isfile(img_path):
+            image = Image.open(img_path)
 
+            plt.subplot(2, 3, images_shown + 1)
+            plt.imshow(image)
+            plt.xticks([])
+            plt.yticks([])
+
+            images_shown += 1
+            if images_shown >= 9:
+                break
+
+def download_wiki_images(data_path):
     # Create the folder if it does not exist, using exist_ok=True to avoid errors if it already exists
     data_path.mkdir(exist_ok=True)
 

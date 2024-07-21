@@ -3,18 +3,16 @@ import os
 from pathlib import Path
 
 import certifi
+import matplotlib
 import torch
 
-
-import utils
-from models.configuration_file import model_configs
-from models.create_models import gr_create_model
 from utils import util_demo_rag_download_wiki_articles, util_demo_rag_download_wiki_images
 from utils.output_functions import gr_welcome
-import matplotlib
+
 matplotlib.use('TkAgg')
 
 import httpx
+
 client = httpx.Client(verify=False)
 
 # RAG and LLAMAINDEX imports
@@ -23,64 +21,21 @@ client = httpx.Client(verify=False)
 # import os
 # os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
 import private_keys
-private_keys
 
+private_keys
 
 import qdrant_client
 from llama_index.core import SimpleDirectoryReader
 from llama_index.vector_stores.qdrant import QdrantVectorStore
-from llama_index.core import VectorStoreIndex, StorageContext
+from llama_index.core import StorageContext
 from llama_index.core.indices import MultiModalVectorStoreIndex
-
+from llama_index.core.response.notebook_utils import display_source_node
+from llama_index.core.schema import ImageNode
 
 device = "cuda:0" if torch.cuda.is_available() else 'cpu'
 
 # Print the welcome message
 gr_welcome(device)
-
-
-# Extract all available models from the configurations
-available_models = []
-for config_data in model_configs.values():
-    available_models.extend(config_data["model_names"])
-
-print("+ Available models:")
-for i, models in enumerate(available_models):
-    print(f"{i + 1}. {models}")
-
-# Prompt the user to select a model by its number
-try:
-    print('\n')
-    user_input = int(input("Enter the number of the model you'd like to test: ")) - 1  # Adjust for 0-based index
-    if user_input >= 0 and user_input < len(available_models):
-        selected_model_name = available_models[user_input]
-    else:
-        raise ValueError("Selected model number is out of range.")
-except ValueError as e:
-    # Handle the case where the input is not an integer or out of range
-    selected_model_name = 'gpt2'
-
-# Initialize a variable to store the description of the selected model
-selected_model_description = None
-
-# Search for the model configuration that matches the selected model name
-for config in model_configs.values():
-    if selected_model_name in config["model_names"]:
-        selected_model_description = config["description"]
-        break
-
-# Check if the description was found
-if selected_model_description:
-    print(f"\n+ Selected model: {selected_model_name}")
-    print(f"+ Description: {selected_model_description}")
-else:
-    print("Model description not found.")
-
-# Create the language model using gr_create_model function
-model, tokenizer, llm_unique_id = gr_create_model(model_name=selected_model_name)
-
-# Set the model to evaluation mode
-model.eval()
 
 data_wiki_path = 'multimodal_rag'
 # Create the full path to the folder in the home directory
@@ -90,8 +45,8 @@ data_path = home_directory / data_wiki_path
 # Multimodal RAG - Download Wikipedia articles and images
 wiki_extracts = util_demo_rag_download_wiki_articles.download_wiki_extracts(data_path=data_path)
 image_metadata_dict = util_demo_rag_download_wiki_images.download_wiki_images(data_path=data_path)
-
 print('Downloaded Wikipedia articles and images.')
+
 util_demo_rag_download_wiki_images.plot_images(image_metadata_dict)
 
 print('Build Multi Modal Vector Store using Text and Image embeddings under different collections.')
@@ -99,23 +54,61 @@ print('Build Multi Modal Vector Store using Text and Image embeddings under diff
 # Configure HTTP client to use certifi's CA bundle
 httpx_client = httpx.Client(verify=certifi.where())
 
+# QdrantVectorStore: This class represents a vector store that uses Qdrant, an efficient and scalable vector database.
+#                    It stores vector embeddings for efficient similarity search.
 
-# Create a local Qdrant vector store
-client = qdrant_client.QdrantClient(path="qdrant_db")
+# VectorStoreIndex: This class provides an interface to interact with a vector store,
+#                   allowing for operations such as adding, updating, and querying vectors.
 
+# StorageContext: This class defines the context for storing vectors, managing multiple vector stores (e.g., text and image stores).
+
+# MultiModalVectorStoreIndex: This class extends VectorStoreIndex to handle multiple modalities (e.g., text and image)
+#                             using different vector stores.
+
+# Create a local Qdrant client, which will interact with the local Qdrant vector store database.
+client = qdrant_client.QdrantClient(path=data_path)
+
+# Initialize a vector store for text embeddings. This store will handle all vector operations for text data.
 text_store = QdrantVectorStore(
     client=client, collection_name="text_collection"
 )
+
+# Initialize a vector store for image embeddings. This store will handle all vector operations for image data.
 image_store = QdrantVectorStore(
     client=client, collection_name="image_collection"
 )
+
+# Create a storage context that includes both the text and image vector stores.
+# This context will be used to manage the interaction between different modalities (text and image) within the vector store.
 storage_context = StorageContext.from_defaults(
     vector_store=text_store, image_store=image_store
 )
 
-# Create the MultiModal index
+# Load the documents (text data) from the specified directory.
+# SimpleDirectoryReader is used to read text data from the directory.
 documents = SimpleDirectoryReader(data_path).load_data()
+
+# Create a MultiModalVectorStoreIndex from the loaded documents and the defined storage context.
+# This index will handle both text and image embeddings, allowing for multimodal operations.
 index = MultiModalVectorStoreIndex.from_documents(
     documents,
     storage_context=storage_context,
 )
+
+# Note: The model that exports the embeddings (e.g., CLIP) is defined within the context of the vector store index operations.
+# To use a different model, you would need to modify the embedding generation part of the pipeline.
+
+test_query = "Show me some van Gogh's paintings"
+# generate  retrieval results
+retriever = index.as_retriever(similarity_top_k=3, image_similarity_top_k=5)
+retrieval_results = retriever.retrieve(test_query)
+
+retrieved_image = []
+for res_node in retrieval_results:
+    if isinstance(res_node.node, ImageNode):
+        retrieved_image.append(res_node.node.metadata["file_path"])
+    else:
+        display_source_node(res_node, source_length=200)
+
+# Plot the retrieved images
+util_demo_rag_download_wiki_images.plot_ret_images(retrieved_image)
