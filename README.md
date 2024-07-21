@@ -200,6 +200,7 @@ Examples of vector databases include Pinecone, Milvus, and Faiss.
 These concepts form the foundation for understanding how LlamaIndex leverages vector embeddings and retrieval mechanisms to enhance the capabilities of large language models (LLMs) in RAG (Retrieval-Augmented Generation) applications.
 
 ## Multi-Modal Retrieval using GPT text embedding and CLIP image embedding for Wikipedia Articles
+
 In *demo_RAG_llama_index.py* we show how to build a Multi-Modal retrieval system using LlamaIndex.
 Wikipedia Text embedding index: Generate GPT text embeddings from OpenAI for texts  Wikipedia Images embedding index: CLIP embeddings from OpenAI for images.
 
