@@ -169,19 +169,99 @@ Another valuable resource is "The PILE," which consists of 20 datasets. These da
 
 Multimodal Large Language Models [My Slides here](https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/multimodal_large_language_models.pdf): A new benchmark is [MME: A Comprehensive Evaluation Benchmark for Multimodal Large Language Models](https://arxiv.org/abs/2306.13394) at the GitHub [MME GitHub link](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models/tree/Evaluation).
 
-## Queries
+## RAG (Retrieval-Augmented Generation) based LLM application
 
-* "Pre-trained language model comparison toolkit"
-* "LLM inference and testing software"
-* "NLP model evaluation tools with BLEU ROUGE metrics"
-* "Open-source LLM benchmarking suite"
-* "Large language model performance analysis toolkit"
-* "Code for testing pre-trained language models on public datasets"
-* "LLM dataset inference tool"
-* "Benchmarking toolkit for NLP models"
-* "Software for comparing pre-trained language models"
-* "Toolkit for LLM evaluation and metric comparison"
+LlamaIndex is a framework that facilitates the integration of various data sources and retrieval mechanisms with large language models (LLMs) to create Retrieval-Augmented Generation (RAG) applications. 
 
+```
+pip install --upgrade pip
+pip install llama_index
+pip install torch transformers
+```
+
+### General Notions for Readers
+
+Before diving into how to use LlamaIndex in Python, it's important to understand a few key concepts related to vector stores and vector databases.
+
+#### Vector Stores
+
+Vector stores are specialized systems for managing high-dimensional vector embeddings. These embeddings capture the semantic meaning of various data types like text and images. Vector stores are optimized for similarity search, where both the data and queries are represented as vectors, allowing for efficient retrieval of the most relevant information.
+
+#### Vector Databases
+
+Vector databases are designed to store and handle vector embeddings at scale. They provide robust infrastructure for efficient similarity searches across large datasets. Key features include:
+
+- **Efficient Indexing**: Fast retrieval methods for high-dimensional vectors.
+- **Similarity Search**: Algorithms to identify vectors most similar to a query.
+- **Scalability**: Capability to manage large-scale datasets with billions of vectors.
+
+Examples of vector databases include Pinecone, Milvus, and Faiss.
+
+These concepts form the foundation for understanding how LlamaIndex leverages vector embeddings and retrieval mechanisms to enhance the capabilities of large language models (LLMs) in RAG (Retrieval-Augmented Generation) applications.
+
+## Multi-Modal Retrieval using GPT text embedding and CLIP image embedding for Wikipedia Articles
+In *demo_RAG_llama_index.py* we show how to build a Multi-Modal retrieval system using LlamaIndex.
+Wikipedia Text embedding index: Generate GPT text embeddings from OpenAI for texts  Wikipedia Images embedding index: CLIP embeddings from OpenAI for images.
+
+```
+sudo apt-get update
+sudo apt-get install --reinstall ca-certificates
+sudo apt-get install python3-tk
+
+pip install torch torchvision
+pip install matplotlib scikit-image
+
+pip install llama-index-vector-stores-qdrant
+pip install llama_index ftfy regex tqdm
+pip install git+https://github.com/openai/CLIP.git
+pip install llama-index-embeddings-clip
+
+pip install -U qdrant_client
+```
+
+The script will download Wikipedia Images and texts.
+
+```
+# Multimodal RAG - Download Wikipedia articles and images
+wiki_extracts = util_demo_rag_download_wiki_articles.download_wiki_extracts(folder_name='multimodal_rag')
+image_metadata_dict = util_demo_rag_download_wiki_images.download_wiki_images(folder_name='multimodal_rag')
+```
+![img.png](img.png)
+
+Create a script to export you openai private key:
+
+```
+pip install --upgrade openai
+
+import private_keys
+private_keys
+
+Content: 
+
+import os
+os.environ["OPENAI_API_KEY"] = "YOUR_API_KEY"
+```    
+Make sure your script includes the necessary code to set the API key before invoking any functionality that requires it.
+
+Check if OpenAI is working:
+
+```
+import private_keys
+private_keys
+
+from openai import OpenAI
+client = OpenAI()
+
+completion = client.chat.completions.create(
+  model="gpt-4o-mini",
+  messages=[
+    {"role": "system", "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
+    {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
+  ]
+)
+
+print(completion.choices[0].message)
+```
 
 ## Conclusions
 
