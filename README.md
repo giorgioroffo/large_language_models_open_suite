@@ -199,7 +199,7 @@ Examples of vector databases include Pinecone, Milvus, and Faiss.
 
 These concepts form the foundation for understanding how LlamaIndex leverages vector embeddings and retrieval mechanisms to enhance the capabilities of large language models (LLMs) in RAG (Retrieval-Augmented Generation) applications.
 
-## RAG implementation with LlamaIndex
+## LLMSuite-Demo 1: RAG implementation with LlamaIndex
 
 ```
 pip install llama-index-vector-stores-faiss
@@ -231,7 +231,7 @@ The demo Python script **demo_RAG_simple.py** demonstrates how to create, store,
 Overall, this script illustrates how to leverage FAISS and llama_index for creating, storing, and querying a vector-based index, which is useful in various applications such as information retrieval, recommendation systems, and more.
 
 
-## Multi-Modal Retrieval using GPT text embedding and CLIP image embedding for Wikipedia Articles
+## LLMSuite-Demo 2: Multi-Modal Retrieval using GPT text embedding and CLIP image embedding for Wikipedia Articles
 In *demo_RAG_llama_index.py* we show how to build a Multi-Modal retrieval system using LlamaIndex.
 Wikipedia Text embedding index: Generate GPT text embeddings from OpenAI for texts  Wikipedia Images embedding index: CLIP embeddings from OpenAI for images.
 
@@ -300,6 +300,27 @@ The MLLM processes images using the [https://github.com/OpenAI/CLIP](CLIP transf
 ![image](https://github.com/user-attachments/assets/ad500bf3-dc70-49d9-b028-cdccb6997e31)
 
 *Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry et al. "Learning transferable visual models from natural language supervision." In International conference on machine learning, pp. 8748-8763. PMLR, 2021*.
+
+
+## LLMSuite-Demo 3: Fine-Tuning a Llama-2-7b model 
+
+
+
+```
+pip install --upgrade --force-reinstall --ignore-installed lamini
+
+Go to: https://app.lamini.ai/account
+
+Then, create a script private_keys.py to export you lamini private key:
+
+import lamini
+lamini.api_key = "YOUR_API_KEY"
+
+then 
+
+import private_keys
+private_keys
+```
 
 
 ## Conclusions
