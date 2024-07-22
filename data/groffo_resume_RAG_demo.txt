@@ -1,0 +1,58 @@
+### Giorgio Roffo - Curriculum Vitae
+
+#### Professional Summary
+Giorgio Roffo is a Ph.D. holder and a Senior Research Scientist specializing in Artificial Intelligence, Deep Learning, and Computer Vision. He currently serves as an Applied Scientist at Cosmo Intelligent Medical Devices in Milan, Italy, where he focuses on developing AI-driven solutions for various applications in deep learning, artificial intelligence, and machine learning.
+
+#### Professional Experience
+- **2022 - Present: Senior Research Scientist, COSMO IMD, Milan**
+  - Leading AI research in computer vision for medical devices, focusing on automated medical imaging analysis.
+  
+- **2020 - 2022: Research Scientist, Mind Vision Labs LTD, London**
+  - Collaborated with UCL and Toyota Research Institute on advanced autonomous driving technologies under the supervision of Prof. Nilli Lavie, head of UCL Attention and Cognitive Control laboratory.
+  
+- **2017 - 2020: Research Associate, University of Glasgow**
+  - Worked with Prof. Alessandro Vinciarelli on deep learning and attention models for social signal processing.
+  
+- **2014 - 2017: Ph.D. in Computer Science, University of Verona**
+  - Thesis on "Ranking to Learn and Learning to Rank" under the supervision of Prof. Marco Cristani.
+  
+- **2012 - 2013: Research Student, Italian Institute of Technology (IIT)**
+  - Supervised by Prof. Vittorio Murino and Dr. Loris Bazzani.
+
+#### Highlights
+- **Citations**: Google Scholar (2479), ResearchGate (1983).
+- **Publications**: Authored 23 papers in top-tier journals and conferences (e.g., T-PAMI, TOG, ICCV, ACM CHI, MICCAI).
+- **Software Development**: Developed LLMSuite (PyTorch) and FSLib Matlab toolbox.
+- **Awards**: CVPR 2019 Outstanding Reviewers Award, MathWorks Community recognition, MathWorks Research Summit 2017 invitee.
+- **Mentorship**: Mentored numerous Ph.D. and Masters students at the University of Glasgow.
+- **Research Projects**: Led research projects and secured competitive funding (e.g., SICSA).
+
+#### Research Funding and Grants
+- **2019**: SICSA competitive funding for research projects.
+- **2019**: MathWorks Research Summit funding.
+- **2017**: NVIDIA GPU Grant.
+- **2015**: Cooperint International Programme.
+
+#### Selected Publications
+- **2024**: "Hard-Attention Gates with Gradient Routing for Endoscopic Image Computing" (MICCAI).
+- **2020**: "Infinite Feature Selection: a Graph-based Feature Filtering Approach" (TPAMI).
+- **2019**: "Automating the Administration and Analysis of Psychiatric Tests" (ACM CHI).
+- **2018**: "Discrete time Evolution Process Descriptor for shape analysis and matching" (ACM TOG).
+- **2017**: "Infinite Latent Feature Selection: A Probabilistic Latent Graph-Based Ranking Approach" (ICCV).
+- **2016**: "Online Feature Selection for Visual Tracking" (BMVC).
+- **2015**: "Infinite Feature Selection" (ICCV).
+
+#### Potential Applications in Industry
+- **Medical Imaging and Diagnostics**: Utilizing AI for medical image analysis and diagnosis.
+- **Enhanced Video Editing**: Applying AI for advanced video editing features.
+- **Autonomous Vehicles**: Developing AI for navigation and obstacle detection in self-driving cars.
+- **Automated Customer Support**: Creating AI chatbots and virtual assistants for customer interactions.
+- **Advanced Surveillance Systems**: Enhancing security with AI-driven real-time threat detection and response.
+
+#### Online Profiles
+- **Home Page**: [Giorgio Roffo Home Page](http://giorgio-roffo-cv-jbsk7t9.gamma.site/)
+- **Google Scholar**: [Giorgio Roffo on Google Scholar](https://scholar.google.com/citations?hl=en&user=cD2LFuUAAAAJ)
+- **ResearchGate**: [Giorgio Roffo on ResearchGate](https://www.researchgate.net/profile/Giorgio-Roffo)
+- **GitHub**: [Giorgio Roffo on GitHub](https://github.com/giorgioroffo/large_language_models_open_suite)
+- **MathWorks File Exchange**: [FSLib Matlab toolbox](https://www.mathworks.com/matlabcentral/fileexchange/56937-feature-selection-library)
+- **LinkedIn**: [Giorgio Roffo on LinkedIn](https://www.linkedin.com/in/giorgio-roffo/)
