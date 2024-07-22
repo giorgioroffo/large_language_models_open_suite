@@ -295,6 +295,13 @@ completion = client.chat.completions.create(
 print(completion.choices[0].message)
 ```
 
+The MLLM processes images using the [https://github.com/OpenAI/CLIP](CLIP transformer) to obtain embeddings.
+
+![image](https://github.com/user-attachments/assets/ad500bf3-dc70-49d9-b028-cdccb6997e31)
+
+*Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry et al. "Learning transferable visual models from natural language supervision." In International conference on machine learning, pp. 8748-8763. PMLR, 2021*.
+
+
 ## Conclusions
 
 The GR LLMSuite is a practical framework for benchmarking and evaluating pre-trained language models. It supports comparative analysis across various public datasets using metrics like BLEU and ROUGE. The suite's modular design allows for flexibility in incorporating new models, datasets, and evaluation metrics.
