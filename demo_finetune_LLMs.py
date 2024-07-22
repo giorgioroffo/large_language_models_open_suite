@@ -82,6 +82,8 @@ def compare_models():
 
 # Main function
 def main():
+    import private_keys
+    private_keys
 
     # Load and process the instruction-tuned dataset
     dataset_name = "tatsu-lab/alpaca"
@@ -117,12 +119,6 @@ def main():
     instruction_model = AutoModelForCausalLM.from_pretrained("lamini/lamini_docs_finetuned")
     print('> Fine-tuned model, test sample inference:')
     print(inference(test_sample["question"], instruction_model, tokenizer))
-
-    # Tune the model on the dataset
-    print('> Tuning baseline model on dataset...')
-    model.tune(data_or_dataset_id=finetuning_dataset["train"], tokenizer=tokenizer)
-    print('> Baseline model, test sample inference after tuning:')
-    print(inference(test_sample["question"], model, tokenizer))
 
 
 # Execute main function
