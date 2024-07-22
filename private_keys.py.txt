@@ -1,0 +1,41 @@
+import os
+import certifi
+import httpx
+import openai
+from huggingface_hub import hf_hub_download, HfApi
+
+# Step 1: Set the OpenAI API key
+os.environ['OPENAI_API_KEY'] = 'YOUR_SECRET_KEY'
+
+# Verify the OpenAI API key is set
+try:
+    api_key = os.environ['OPENAI_API_KEY']
+    print("OPENAI_API_KEY set successfully")
+except KeyError:
+    print("Err: OPENAI_API_KEY not found")
+
+# Step 2: Configure HTTP client to use certifi's CA bundle
+httpx_client = httpx.Client(verify=certifi.where())
+
+# Step 3: Set the Hugging Face Hub token
+os.environ['HUGGINGFACE_HUB_TOKEN'] = 'YOUR_SECRET_KEY'
+
+# Verify the Hugging Face Hub token is set
+try:
+    hf_token = os.environ['HUGGINGFACE_HUB_TOKEN']
+    print("HUGGINGFACE_HUB_TOKEN set successfully")
+except KeyError:
+    print("Err: HUGGINGFACE_HUB_TOKEN not found")
+
+# Step 4: Set the Lamini API key
+import lamini
+
+lamini.api_key = 'YOUR_SECRET_KEY'
+
+# Verify the Lamini API key is set
+try:
+    if lamini.api_key is not None:
+        print("LAMINI KEY set successfully")
+except KeyError:
+    print("LAMINI API key not found")
+
