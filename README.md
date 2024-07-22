@@ -199,6 +199,38 @@ Examples of vector databases include Pinecone, Milvus, and Faiss.
 
 These concepts form the foundation for understanding how LlamaIndex leverages vector embeddings and retrieval mechanisms to enhance the capabilities of large language models (LLMs) in RAG (Retrieval-Augmented Generation) applications.
 
+## RAG implementation with LlamaIndex
+
+```
+pip install llama-index-vector-stores-faiss
+pip install llama-index
+pip install llama-index-llms-openai
+pip install faiss-cpu
+```
+
+The demo Python script **demo_RAG_simple.py** demonstrates how to create, store, and load a vector index using FAISS and the llama_index library. 
+
+### Functionality:
+1. Directory Setup: Creates a storage directory in the user's home directory if it doesn't already exist.
+2. FAISS Index Initialization: Initializes a FAISS index for storing high-dimensional vectors with a specified dimensionality.
+3. Document Loading: Uses the SimpleDirectoryReader to load documents from a specified directory.
+4. Vector Store Creation: Creates a FaissVectorStore to manage the FAISS index.
+5. Storage Context Initialization: Sets up a StorageContext to manage the vector store and its persistence.
+6. Vector Index Creation: Builds a VectorStoreIndex from the loaded documents using the storage context.
+7. Index Persistence: Saves the created index to disk in the specified storage directory.
+8. Index Loading: Reloads the index from disk, demonstrating how to persist and retrieve the vector index.
+
+### Key Components:
+- FAISS: An open-source library that is efficient for similarity search and clustering of dense vectors.
+- llama_index: A library providing utilities for managing and querying vector indexes.
+- SimpleDirectoryReader: A utility to load documents from a directory.
+- VectorStoreIndex: A class representing an index of vectors that supports adding and querying vectors.
+- StorageContext: Manages the storage and retrieval of vector data, enabling persistence and loading of vector indexes.
+- FaissVectorStore: A specific implementation of a vector store using FAISS for efficient vector operations.
+
+Overall, this script illustrates how to leverage FAISS and llama_index for creating, storing, and querying a vector-based index, which is useful in various applications such as information retrieval, recommendation systems, and more.
+
+
 ## Multi-Modal Retrieval using GPT text embedding and CLIP image embedding for Wikipedia Articles
 In *demo_RAG_llama_index.py* we show how to build a Multi-Modal retrieval system using LlamaIndex.
 Wikipedia Text embedding index: Generate GPT text embeddings from OpenAI for texts  Wikipedia Images embedding index: CLIP embeddings from OpenAI for images.
@@ -226,7 +258,7 @@ The script will download Wikipedia Images and texts.
 wiki_extracts = util_demo_rag_download_wiki_articles.download_wiki_extracts(folder_name='multimodal_rag')
 image_metadata_dict = util_demo_rag_download_wiki_images.download_wiki_images(folder_name='multimodal_rag')
 ```
-![img.png](img.png)
+![img.png](data/img.png)
 
 Create a script to export you openai private key:
 
