@@ -1,3 +1,19 @@
+'''
+Author: Giorgio Roffo, 2024
+GitHub: https://github.com/giorgioroffo/large_language_models_open_suite
+Report: https://arxiv.org/html/2407.12036v1
+
+If you use this toolbox in your research or work, please consider citing the following paper:
+
+@misc{roffo2024exploring,
+    title={Exploring Advanced Large Language Models with LLMsuite},
+    author={Giorgio Roffo},
+    year={2024},
+    eprint={2407.12036},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+'''
 import time
 
 import torch
@@ -76,15 +92,16 @@ for task_name, task_data in tasks.items():
         # Dynamic Function Selection and Execution
         generate_llm_output = run_model_task(llm_unique_id, task_name, model_configs)
 
-        generated_text_gr_strategy = generate_llm_output(model, tokenizer, prompt, max_new_tokens=int(
+        generated_text = generate_llm_output(model, tokenizer, prompt, max_new_tokens=int(
             len(prompt) * max_tokens_by_task[task_name]))
 
         search_time = time.time() - start_time
 
-        print(f'Generated Text: {generated_text_gr_strategy}')
+        print(f'Generated Text: ')
+        print(generated_text)
 
         # Append generated text and ground truth for later aggregate computation
-        all_generated_texts[task_name].append(generated_text_gr_strategy)
+        all_generated_texts[task_name].append(generated_text)
         all_ground_truths[task_name].append(gt)
 
 # Print the metrics table for the generated texts and ground truths for each task using the print_metrics_table function

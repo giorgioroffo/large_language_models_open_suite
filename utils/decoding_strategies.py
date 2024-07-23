@@ -222,3 +222,16 @@ def handle_mixtral_8_7B_text_generation(model, tokenizer, input_text, max_new_to
         return responses
     else:
         raise ValueError("The output is neither a list of strings nor a single string.")
+
+
+def gemma_output(model, tokenizer, input_text, max_new_tokens=128):
+    input_ids = tokenizer(input_text, return_tensors="pt").to(model.device)
+
+    outputs = model.generate(**input_ids, max_length=max_new_tokens)
+    return tokenizer.decode(outputs[0])
+
+def llama_output(model, tokenizer, input_text, max_new_tokens=128):
+    input_ids = tokenizer(input_text, return_tensors="pt").to(model.device)
+
+    outputs = model.generate(**input_ids, max_length=max_new_tokens)
+    return tokenizer.decode(outputs[0])

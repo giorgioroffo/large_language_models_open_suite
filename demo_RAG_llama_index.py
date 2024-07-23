@@ -1,4 +1,20 @@
 # RAG (Retrieval-Augmented Generation) based LLM application
+'''
+Author: Giorgio Roffo, 2024
+GitHub: https://github.com/giorgioroffo/large_language_models_open_suite
+Report: https://arxiv.org/html/2407.12036v1
+
+If you use this toolbox in your research or work, please consider citing the following paper:
+
+@misc{roffo2024exploring,
+    title={Exploring Advanced Large Language Models with LLMsuite},
+    author={Giorgio Roffo},
+    year={2024},
+    eprint={2407.12036},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+'''
 import os
 from pathlib import Path
 

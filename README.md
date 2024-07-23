@@ -302,26 +302,69 @@ The MLLM processes images using the [https://github.com/OpenAI/CLIP](CLIP transf
 *Radford, Alec, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry et al. "Learning transferable visual models from natural language supervision." In International conference on machine learning, pp. 8748-8763. PMLR, 2021*.
 
 
-## LLMSuite-Demo 3: Fine-Tuning a Llama-2-7b model 
+## LLMSuite-Demo 3: Fine-Tuning a compare moels 
+
+The demo file '**demo_compare_finetuned_LLMs.py**' shows the differences in performance between two fine-tuned models on the same task. 
+
+## LLMSuite-Demo 4: Fine-Tuning a model on Databricks-Dolly-15k dataset
+
+This script fine-tunes a language model on the Databricks-Dolly-15k dataset using LoRA (Low-Rank Adaptation) technique.
+
+Usage:
+    python demo_PEFT_LoRA_finetuning.py -parFile data/param_finetuning_lora.yml
+
+Steps:
+1. Parse command-line arguments to get the YAML configuration file.
+2. Load configurations including model details, LoRA, and training parameters.
+3. Check device availability (GPU/CPU).
+4. Create and prepare the dataset for fine-tuning.
+5. Configure and load the base model and tokenizer.
+6. Set up LoRA and bitsandbytes configurations.
+7. Define and initialize training arguments.
+8. Train the model using the specified parameters.
+9. Save the fine-tuned model.
+10. Demonstrate model usage with a sample input.
+
+To ensure the demo **'demo_PEFT_LoRA_finetuning.py'** runs smoothly, please follow these steps to install and upgrade the necessary packages.
 
 
+For any basic activities like loading models and tokenizers for running inference, upgrading is a must for the newest Gemma model.
 
+```bash
+pip install --upgrade datasets
+pip install --upgrade transformers
 ```
-pip install --upgrade --force-reinstall --ignore-installed lamini
 
-Go to: https://app.lamini.ai/account
+For doing efficient operations, install the following packages:
 
-Then, create a script private_keys.py to export you lamini private key:
-
-import lamini
-lamini.api_key = "YOUR_API_KEY"
-
-then 
-
-import private_keys
-private_keys
+```bash
+pip install --upgrade peft
+pip install --upgrade trl
+pip install bitsandbytes
+pip install accelerate
 ```
 
+For logging and visualizing training progress:
+
+```bash
+pip install tensorboard
+```
+
+If creating a new dataset, the following package is useful for creating `*.jsonl` files:
+
+```bash
+pip install jsonlines
+```
+
+Install the `trl` package for training and fine-tuning models:
+
+```bash
+pip install trl
+```
+
+Example of the training output:
+
+![img.png](data/training.png)
 
 ## Conclusions
 
