@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import pandas as pd
+import private_keys
 
 # Print a cool ASCII art greeting at script start
 def gr_welcome(device):
@@ -25,6 +26,8 @@ def gr_welcome(device):
     print(" * Run inference on models pre-trained on diverse datasets.")
     print(" * Assess model performance using standard metrics like BLEU and ROUGE.\n")
     print(f"NOTE: The code will be executed on '{device}' device.\n")
+
+    private_keys
 
 
 def print_metrics_table(tasks, all_generated_texts, all_ground_truths, metric_descriptions, compute_aggregate_metrics,

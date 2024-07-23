@@ -20,6 +20,21 @@ This demo Python script demonstrates how to create, store, and load a vector ind
 - FaissVectorStore: A specific implementation of a vector store using FAISS for efficient vector operations.
 
 Overall, this script illustrates how to leverage FAISS and llama_index for creating, storing, and querying a vector-based index, which is useful in various applications such as information retrieval, recommendation systems, and more.
+
+Author: Giorgio Roffo, 2024
+GitHub: https://github.com/giorgioroffo/large_language_models_open_suite
+Report: https://arxiv.org/html/2407.12036v1
+
+If you use this toolbox in your research or work, please consider citing the following paper:
+
+@misc{roffo2024exploring,
+    title={Exploring Advanced Large Language Models with LLMsuite},
+    author={Giorgio Roffo},
+    year={2024},
+    eprint={2407.12036},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
 '''
 from pathlib import Path
 
@@ -42,6 +57,12 @@ from llama_index.core import (
 )
 from llama_index.vector_stores.faiss import FaissVectorStore  # FAISS-based implementation of a vector store.
 import os  # Import the OS module for interacting with the operating system.
+from utils.output_functions import gr_welcome, print_metrics_table
+import torch
+device = "cuda:0" if torch.cuda.is_available() else 'cpu'
+
+# Print the welcome message
+gr_welcome(device)
 
 # Create the folder if it does not exist, using exist_ok=True to avoid errors if it already exists
 base_path = 'storage'  # Define the base path where the storage folder will be created.

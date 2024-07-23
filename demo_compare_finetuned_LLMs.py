@@ -1,6 +1,21 @@
 #!/usr/bin/env python
 # coding: utf-8
+'''
+Author: Giorgio Roffo, 2024
+GitHub: https://github.com/giorgioroffo/large_language_models_open_suite
+Report: https://arxiv.org/html/2407.12036v1
 
+If you use this toolbox in your research or work, please consider citing the following paper:
+
+@misc{roffo2024exploring,
+    title={Exploring Advanced Large Language Models with LLMsuite},
+    author={Giorgio Roffo},
+    year={2024},
+    eprint={2407.12036},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
+}
+'''
 # Import necessary libraries
 import itertools
 import jsonlines
@@ -12,6 +27,12 @@ private_keys
 
 from lamini.runners.basic_model_runner import BasicModelRunner
 from transformers import AutoTokenizer, AutoModelForCausalLM, AutoModelForSeq2SeqLM
+from utils.output_functions import gr_welcome, print_metrics_table
+import torch
+device = "cuda:0" if torch.cuda.is_available() else 'cpu'
+
+# Print the welcome message
+gr_welcome(device)
 
 # Define prompt templates
 prompt_template_without_input = """Below is an instruction that describes a task. Write a response that appropriately completes the request.

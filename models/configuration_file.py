@@ -51,4 +51,35 @@ model_configs = {
             'translation': decoding_strategies.handle_mixtral_8_7B_text_generation,
         },
     },
+    3: {
+            "description": "Google Gemma v2. Remember: request access to the model you want to use",
+            "model_names": ["google/gemma-2b"],
+            "model_class": AutoModelForCausalLM,
+            "tokenizer_class": AutoTokenizer,
+            "config": None,
+            "additional_configs": {
+                "device_map": "auto",
+                "torch_dtype": torch.bfloat16,
+            },
+            "task_specific_configs": {
+                'summarization': decoding_strategies.gemma_output,
+                'translation': decoding_strategies.gemma_output,
+            },
+        },
+    4: {
+        "description": "Meta LLaMA 2. Remember: request access to the model you want to use",
+        "model_names": ["meta-llama/Llama-2-7b-hf"],
+        "model_class": AutoModelForCausalLM,
+        "tokenizer_class": AutoTokenizer,
+        "config": None,
+        "additional_configs": {
+            "device_map": "auto",
+            "torch_dtype": torch.bfloat16,
+        },
+        "task_specific_configs": {
+            'summarization': decoding_strategies.llama_output,
+            'translation': decoding_strategies.llama_output,
+        },
+    },
+
 }
