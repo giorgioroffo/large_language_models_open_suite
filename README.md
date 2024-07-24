@@ -129,12 +129,23 @@ The toolbox is organized into several key directories and files, each serving a 
 ```
 large_language_models_open_suite/
 │
+├── data/
+│   ├── groffo_resume_RAG_demo.txt
+│   ├── param_finetuning_lora.yml
+│
 ├── data_loader/                                    
 │   ├── arxiv_summarization_dataset.py
 │   └── demo_data_and_tasks.py
 │
 ├── evaluation/                                     
 │   └── evaluation_metrics.py
+│
+├── invited_talks_slides/
+│   ├── 1_gr_tutorial_LLMs_generative_AI_2024_part1.pdf 
+│   ├── 2_gr_tutorial_LLMs_generative_AI_2024_part2.pdf 
+│   ├── 3_gr_tutorial_LLMs_generative_AI_2024_part3.pdf 
+│   ├── multimodal_large_language_models.pdf
+│   └── slides_ViT_self_attention_vision_transformer.pdf
 │
 ├── models/                                         
 │   ├── configuration_file.py
@@ -144,16 +155,21 @@ large_language_models_open_suite/
 │   ├── decoding_strategies.py
 │   ├── experiment_settings.py                      
 │   ├── output_functions.py                         
-│   └── text_preprocessing.py                       
+│   ├── run_vitb_export_to_embeddings.py
+│   ├── text_preprocessing.py
+│   ├── util_demo_create_dataset_PEFT_LoRA_finetuning.py
+│   ├── util_demo_rag_download_wiki_articles.py
+│   └── util_demo_rag_download_wiki_images.py
 │
-├── 1_gr_tutorial_LLMs_generative_AI_2024_part1.pdf 
-├── 2_gr_tutorial_LLMs_generative_AI_2024_part2.pdf 
-├── 3_gr_tutorial_LLMs_generative_AI_2024_part3.pdf 
-├── GRoffo_Introduction_to_LLMs_2024.pdf            
+├── .gitignore
+├── demo_compare_finetuned_LLMs.py
+├── demo_PEFT_LoRA_finetuning.py
+├── demo_RAG_llama_index.py
+├── demo_RAG_simple.py
 ├── LICENSE                                         
-├── README.md                                       
-└── main_demo.py                                    
-
+├── main_demo.py                                    
+├── private_keys.py.txt # Rename this file to private_keys.py
+└── README.md                                       
 ```
 
 ## Datasets
