@@ -11,10 +11,10 @@
     <td><a href="https://arxiv.org/html/2407.12036v1" target="_blank">Paper PDF</a></td>
     <td><a href="https://www.researchgate.net/profile/Giorgio-Roffo" target="_blank">Author Page</a></td>
     <td><a href="https://scholar.google.it/citations?user=cD2LFuUAAAAJ&hl=en" target="_blank">Google Scholar</a></td>
-    <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/invited_talks_slides/slides_ViT_self_attention_vision_transformer.pdf" target="_blank">Slides Vision Transformer</a></td>
-    <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/invited_talks_slides/1_gr_tutorial_LLMs_generative_AI_2024_part1.pdf" target="_blank">Slides LLMs P1</a></td>
-    <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/invited_talks_slides/2_gr_tutorial_LLMs_generative_AI_2024_part2.pdf" target="_blank">Slides LLMs P2</a></td>
-    <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/invited_talks_slides/3_gr_tutorial_LLMs_generative_AI_2024_part3.pdf" target="_blank">Slides LLMs P3</a></td>
+    <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/invited_talks_slides/1_gr_tutorial_LLMs_generative_AI_2024_part1.pdf" target="_blank">Slides P1</a></td>
+    <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/invited_talks_slides/2_gr_tutorial_LLMs_generative_AI_2024_part2.pdf" target="_blank">Slides P2</a></td>
+    <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/invited_talks_slides/3_gr_tutorial_LLMs_generative_AI_2024_part3.pdf" target="_blank">Slides P3</a></td>
+    <td><a href="https://github.com/giorgioroffo/large_language_models_open_suite/blob/main/invited_talks_slides/slides_ViT_self_attention_vision_transformer.pdf" target="_blank">Slides ViT</a></td>
   </tr>
 </table>
 
