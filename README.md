@@ -25,7 +25,8 @@
 
 ## Introduction
 
-The LLMSuite is a public toolbox designed to facilitate practice with large language models (LLMs). It allows users to view code, run inferences, and measure performance using pre-trained models. Currently in version 1, the suite supports evaluation tasks and is under active development to include training functionalities and fine-tuning strategies in future releases.
+The LLMSuite is a public toolbox designed to facilitate practice with large language models (LLMs). 
+It allows users to view code, run inferences, and measure performance using pre-trained models. Currently in version 1, the suite supports evaluation tasks and is under active development to include training functionalities and fine-tuning strategies in future releases.
 
 The toolbox is built with modularity, enabling users to test a variety of models and configurations. Key features include:
 
@@ -388,8 +389,6 @@ Example of the training output:
 
 ## Conclusions
 
-The GR LLMSuite is a practical framework for benchmarking and evaluating pre-trained language models. It supports comparative analysis across various public datasets using metrics like BLEU and ROUGE. The suite's modular design allows for flexibility in incorporating new models, datasets, and evaluation metrics.
-Future enhancements will focus on expanding functionality and usability, guided by community feedback and research advancements.
-
+The LLMSuite is a valuable toolbox for students, researchers, and practitioners interested in working with pre-trained language models. It provides a practical framework for benchmarking and evaluating these models, supporting comparative analysis across various public datasets using metrics like BLEU and ROUGE. The suite's modular design offers flexibility in incorporating new models, datasets, and evaluation metrics. Additionally, it includes demo scripts for implementing Retrieval-Augmented Generation (RAG), multimodal RAG with CLIP, and training scripts to fine-tune LLM models. Future enhancements will focus on expanding functionality and usability, guided by community feedback and research advancements.
 
 
