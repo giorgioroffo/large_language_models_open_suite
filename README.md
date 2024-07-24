@@ -174,7 +174,11 @@ large_language_models_open_suite/
 
 ## Datasets
 
-Another valuable resource is "The PILE," which consists of 20 datasets. These datasets are suitable for small-scale training or fine-tuning models.
+Another valuable resource is "The PILE," which consists of 20 datasets. 
+
+In the demonstration, we utilized the Databricks-Dolly-15k dataset to fine-tune Gemma using the LoRA (Low-Rank Adaptation) technique.
+
+The following datasets are suitable for small-scale training or fine-tuning models.
 
 <div align="center">
   
