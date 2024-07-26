@@ -34,7 +34,7 @@ The toolbox is built with modularity, enabling users to test a variety of models
 - **Performance Measurement:** The suite computes and displays performance metrics using established evaluation criteria.
 - **Ease of Use:** Designed to be accessible for both researchers and developers, with clear documentation and support for various model architectures.
 
-As the GR LLMSuite evolves, upcoming versions will expand its capabilities to include more advanced functionalities, enhancing its utility for the NLP community.
+As the LLMSuite evolves, upcoming versions will expand its capabilities to include more advanced functionalities, enhancing its utility for the NLP community.
 
 ## Citation
 
